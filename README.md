@@ -186,3 +186,10 @@ The tool accepts these inputs:
 | `consolidated_system` | Unified system name (prefer DefenseFinder if available) |
 
 ------------------------------------------------------------------------
+
+### Merging across multiple genomes
+
+It is recommended to run the script seperately for each genome. To compile results from many genomes use:
+
+```awk 'FNR==1 && NR!=1 {next} {print}' */*_consolidated.tsv > compiled.tsv```
+
